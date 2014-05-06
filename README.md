@@ -1,8 +1,8 @@
 Single Page Application based on Silex microframework. It's built basic MVC design pattern.
-The application utilizes Yahoo Content Analysis API for purely development and educational purposes.
+The application utilizes the Yahoo Content Analysis API for purely development and educational purposes.
 
 Description:
-This project is a very basic sample or a bootstrap Silex app. 
+This project is a very general Silex code sample. 
 
 Features:
     - Composer;
