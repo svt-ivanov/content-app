@@ -10,6 +10,7 @@ require_once PATH_SRC . '/config/production.php';
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use library\View;
 
 // starting app
 $app = new Silex\Application();
@@ -31,16 +32,8 @@ $app->error(function(\Exception $e, $code) {
         return;
     }
 
-    $message = '';
-    switch ($code) {
-        case 404:
-            $message = 'The requested page could not be found.';
-            break;
-        default:
-            $message = 'We are sorry, but something went terribly wrong.';
-    }
-
-    return new Response($message);
+    $page = ($code === 404) ? 'error_404' : 'error_500';
+    return new Response(View::render($page));
 });
 
 Request::enableHttpMethodParameterOverride();
