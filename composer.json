@@ -1,0 +1,27 @@
+{
+    "name": "Silex MVC application using Yahoo Content Analysis API",
+    "type": "application",
+    "version": "1.0.0",
+    "description": "The project is a very basic Silex app code sample.",
+    "keywords": ["framework"],
+    "license": "MIT",
+    "authors": [{
+        "name": "Svetoslav Ivanov",
+        "email": "svt.ivanov@gmail.com",
+        "homepage": "",
+        "role": "developer"
+    }],
+
+    "require": {
+        "silex/silex": "~1.2",
+        "twbs/bootstrap": "3.1.1"
+    },
+
+    "autoload": {
+        "psr-4": {
+            "controller\\": "src/controller",
+            "library\\": "src/library",
+            "model\\": "src/model"
+        }
+    }
+}

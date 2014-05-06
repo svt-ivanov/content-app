@@ -1,0 +1,27 @@
+body {
+  padding-top: 50px;
+}
+.container {
+  margin-left: auto;
+  margin-right: auto;
+}
+.container .jumbotron,
+.container .form-control,
+.container .panel,
+.container .label,
+.container .btn {
+  border-radius: 0;
+}
+.container .jumbotron h2 {
+  text-align: center;
+}
+.container .row {
+  margin-left: 0;
+  margin-right: 0;
+}
+.container dl .panel dt i {
+  color: #444;
+}
+.container dl .panel dd {
+  padding-left: 10px;
+}
