@@ -6,9 +6,9 @@ Description:
 This project is a very general Silex code sample. 
 
 Features:
-    * Composer;
-    * Silex;
-    * Twitter Bootsrap;
+    * Composer
+    * Silex
+    * Twitter Bootsrap
 
 Installation notes:
 Just extract the archive file and make use of it as it is structured. You would need to register on Yahoo Developer Network and get an API key. After you create a project in Yahoo Dev, you would need to set up your local settings (Apache or whatever your flavor web server is) to make possible use of this source code.
