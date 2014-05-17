@@ -2,16 +2,25 @@
 namespace model;
 
 /**
- * Class 'Content' intended to be
- * a model for fetching the necessary
+ * Class 'Content' intended to be a
+ * model for fetching the necessary
  * data from Yahoo Content-Analysis API.
  */
 class Content
 {
     private $characters = array("'", "?", "\\");
     private $replacements = array(" ", " ", " ");
+    
     private $data;
 
+
+    /**
+     * Abstract away Curl request in
+     * separate function. 
+     * 
+     * @param String $url
+     * @return mixed
+     */
     private function curlWrapper($url)
     {
         $ch = curl_init($url);
@@ -33,6 +42,13 @@ class Content
         }
     }
 
+
+    /**
+     * Parse the delivered content from Yahoo.
+     * 
+     * @param String $response, json format
+     * @return Array $term_data, parsed content
+     */
     private function parseResponse($response)
     {
         $term_data = array();
@@ -53,7 +69,6 @@ class Content
                 foreach ($unit as $value) {
                     $term_data[] = $value;
                 }
-                
             } else {
                 $term_data[] = $unit;
             }
@@ -62,14 +77,23 @@ class Content
         return $term_data;
     }
 
-    public function __construct($data)
+
+    /**
+     * Content Constructor.
+     * 
+     * @param Array $data, content to be analyzed
+     */
+    public function __construct(Array $data)
     {
         $this->data = $data;
     }
 
+
     /**
+     * Make an Yahoo query and get response.
+     * 
      * @param String $format
-     * @return Array $data
+     * @return Array $data, parsed content
      */
     public function getTerms($format='json')
     {

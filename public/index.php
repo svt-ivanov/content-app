@@ -31,7 +31,6 @@ $app->error(function(\Exception $e, $code) {
     if (DEBUG) {
         return;
     }
-
     $page = ($code === 404) ? 'error_404' : 'error_500';
     return new Response(View::render($page));
 });
